@@ -1,0 +1,35 @@
+{
+  "name": "mongoscraper",
+  "version": "1.0.0",
+  "description": "A news articles scrapping application in mongodb and expressjs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rutulpatel/HW-MongoScraper.git"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "mongodb",
+    "mongoose"
+  ],
+  "author": "rutulpatel.rtl@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rutulpatel/HW-MongoScraper/issues"
+  },
+  "homepage": "https://github.com/rutulpatel/HW-MongoScraper#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cheerio": "^1.0.0-rc.1",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "mongojs": "^2.4.0",
+    "mongoose": "^4.10.4",
+    "path": "^0.12.7",
+    "request": "^2.81.0"
+  }
+}
