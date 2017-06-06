@@ -8,12 +8,15 @@ var PORT = process.env.PORT || 3000;
 // Dependencies
 var http = require("http");
 var express = require("express");
-var mongojs = require("mongojs");
+var mongoose = require("mongoose");
+var logger = require("morgan");
 var request = require("request");
 var cheerio = require("cheerio");
 var path = require("path");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
+
+mongoose.Promise = Promise;
 
 // app specific dependencies
 var controller = require("./controller");
@@ -29,10 +32,16 @@ app.server = http.createServer(app);
 var databaseUrl = "news_scraper";
 var collections = ["articles"];
 
-// hook mongojs config to db variable
-var db = mongojs(databaseUrl, collections);
+// db configuration with mongoose 
+mongoose.connect("mongodb://localhost/mongoscraper");
+var db = mongoose.connection;
+
 db.on("error", function(err) {
-  console.log("Database Error:", err);
+  console.log("Mongoose Error:", err);
+});
+
+db.once("open", function() {
+  console.log("Mongoose connection successful");
 });
 
 // server static pages
@@ -47,6 +56,7 @@ var hbs = exphbs.create({
   defaultLayout: "main"
 });
 
+app.use(logger("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
