@@ -16,35 +16,27 @@ $(document).ready(function() {
 
   $("#scrapeArticles").on("click", function(e) {
     e.preventDefault();
-    $.ajax({
-      url: "/scrape",
-      method: "GET",
-      success: function(res) {
-        alert(res.length() + " articles added to your saved articles");
-        location.reload();
-      },
-      error: function(err) {
-        alert(err);
-      }
-    });
+    // $.ajax({
+    //   url: "/scrape",
+    //   method: "GET",
+    //   success: function(res) {
+    //     alert(res.length() + " articles added to your saved articles");
+    document.location.href = "/scrape";
+    //   },
+    //   error: function(err) {
+    //     alert(err);
+    //   }
+    // });
   });
 
-  $(".saveArticle").on("click", function(e) {
-    var postData = {};
-    postData.summary = $(this).attr("data-summary");
-    postData.title = $(this).attr("data-title");
-    postData.link = $(this).attr("data-link");
-    postData.imgUrl = $(this).attr("data-imgUrl");
+  $(".deleteArticle").on("click", function(e) {
+    e.preventDefault();
     $.ajax({
-      url: "/save",
-      method: "POST",
-      data: postData,
+      url: "/delete/" + $(this).attr("data-id").toString(),
+      method: "DELETE",
       success: function(res) {
-          console.log(res);
-          document.location.href="/saved";
-      },
-      error: function(err) {
-          console.log(err);
+        // alert(res);
+        location.reload();
       }
     });
   });

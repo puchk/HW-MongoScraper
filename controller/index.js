@@ -7,17 +7,7 @@ var cheerio = require("cheerio");
 var Article = require("../models/Article.js");
 var Note = require("../models/Note.js");
 
-// router.get("/", function(req, res) {
-//   Article.find({}, function(err, doc) {
-//     if(err) {
-//       console.log(err);
-//     } else {
-//       res.render("index", {"articles":doc});      
-//     }
-//   });
-// });
-
-router.get("/", function(req, res) {
+router.get("/scrape", function(req, res) {
   return new Promise(function(resolve, reject) {
     var result = {};
     var baseUrl = "http://www.newsweek.com/";
@@ -36,11 +26,21 @@ router.get("/", function(req, res) {
     });
   })
     .then(function(r) {
-      res.render("index", {"articles":r});      
+      res.render("scrape", {"articles":r});      
     })
     .catch(function(e) {
       console.log(e);
     });
+});
+
+router.get("/", function(req, res) {
+  Article.find({}, function(err, doc) {
+    if(err) {
+      console.log(err);
+    } else {
+      res.render("index", {"articles": doc});
+    }
+  });
 });
 
 router.get("/clearall", function(req, res) {
@@ -80,10 +80,20 @@ router.post("/save", function(req, res) {
   entry.save(function(err, doc) {
     if (err) {
       console.log(err);
-      // res.redirect("saved");
-      
     } else {
       console.log(doc);
+      res.send("saved");
+    }
+  });
+});
+
+router.delete("/delete/:id", function(req, res) {
+  console.log(req.params);
+  Article.findByIdAndRemove(req.params.id, function(err) {
+    if(err) {
+      console.log(err);
+    } else {
+      res.send("Deleted article from the database");
     }
   });
 });
