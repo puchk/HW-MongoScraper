@@ -7,7 +7,7 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav">
                     <li class="active" role="presentation"><a id="savedArticles" style="color:green;" href="/">Saved Articles</a></li>
-                    <li role="presentation"><a id="scrapeArticles" href="/scrape" style="background-color:#ffffff;">Scrape More Articles</a></li>
+                    <li role="presentation"><a id="scrapeArticles" href="/scrape" style="background-color:#ffffff;">Scrape 30 Articles</a></li>
                     <li role="presentation"><a id="deleteArticles" href="/" style="color:red;">Delete All Saved Articles</a></li>
                 </ul>
             </div>
@@ -21,18 +21,18 @@
         <div class="panel panel-default articles" id={{this.id}}>
             <div class="panel-heading">
                 <h4>
-                    <a target="_blank" href={{this.link}}>{{this.title}}</a>
+                    <a target="_blank" href="/articles/{{this.id}}">{{this.title}}</a>
                     <button type="button" class="btn btn-danger deleteArticle" data-id={{this.id}} style="float:right;">Delete</button>                    
                     <button type="button" class="btn btn-success addNotes" data-id={{this.id}} style="float:right;">Add notes</button>
                 </h4>
             </div>
             <div class="panel-body">
                 <div class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
-                    <a target="_blank" href={{this.link}}><img height=100 width=150 src={{this.imgUrl}}></a>
+                    <a target="_blank" href="/articles/{{this.id}}"><img height=100 width=150 src={{this.imgUrl}}></a>
                 </div>
                 <div class="col-xs-8 col-sm-9 col-md-9 col-lg-10">
                     <h5>{{this.summary}}</h5>
-                    <a target="_blank" href={{this.link}}>Link of original aritcle</a>
+                    <a target="_blank" href="/articles/{{this.id}}">Link of original aritcle</a>
                 </div>
             </div>
         </div>

@@ -14,21 +14,6 @@ $(document).ready(function() {
     });
   });
 
-  $("#scrapeArticles").on("click", function(e) {
-    e.preventDefault();
-    // $.ajax({
-    //   url: "/scrape",
-    //   method: "GET",
-    //   success: function(res) {
-    //     alert(res.length() + " articles added to your saved articles");
-    document.location.href = "/scrape";
-    //   },
-    //   error: function(err) {
-    //     alert(err);
-    //   }
-    // });
-  });
-
   $(".deleteArticle").on("click", function(e) {
     e.preventDefault();
     $.ajax({
@@ -40,4 +25,10 @@ $(document).ready(function() {
       }
     });
   });
+
+  $(".addNotes").on("click", function(e) {
+    e.preventDefault();
+    
+  });
+
 });
