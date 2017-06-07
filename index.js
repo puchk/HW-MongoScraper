@@ -23,6 +23,7 @@ var controller = require("./controller");
 
 // model dependencies
 var Article = require("./models/Article.js");
+var Note = require("./models/Note.js");
 
 // initialize express app instance
 var app = express();

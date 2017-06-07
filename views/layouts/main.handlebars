@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MongoScraper</title>
+    <title>Mongo News Scraper</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/assets/css/Navigation-Clean1.css">
@@ -13,9 +13,26 @@
 </head>
 
 <body>
+    <div>
+        <nav class="navbar navbar-default navigation-clean-button" style="background-color:#bbd0ee;">
+            <div class="container">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">Mongo News Scraper </a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav">
+                        <li role="presentation"><a id="savedArticles" href="/">Saved Articles</a></li>
+                        <li role="presentation"><a id="scrapeArticles" href="/" style="background-color:#ffffff;">Scrape More Articles</a></li>
+                        <li role="presentation"><a id="deleteArticles" href="/" style="color:red;">Delete All Saved Articles</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
     {{{ body }}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/assets/js/app.js"></script>
 </body>
 
 </html>
