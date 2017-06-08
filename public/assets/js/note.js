@@ -34,4 +34,20 @@ $(document).ready(function() {
     }
   });
 
+  $(".delete-note-btn").on("click", function(e) {
+    e.preventDefault();
+    var noteid = $(this).attr("data-id").toString();
+    $.ajax({
+        url: "/delete-note/" + noteid,
+        method: "DELETE",
+        success: function(res) {
+            console.log(res);
+            $("#panel-"+noteid).remove();
+        }, 
+        catch: function(err) {
+            console.log(err);
+        }
+    });
+  });
+
 });

@@ -137,4 +137,15 @@ router.delete("/delete/:id", function(req, res) {
   });
 });
 
+router.delete("/delete-note/:id", function(req, res) {
+  Note.findByIdAndRemove(req.params.id, function(err) {
+    if(err) {
+      console.log(err);
+    } else {
+      console.log("Deleted note from the database");
+      res.send("Deleted note from the database");
+    }
+  })
+});
+
 module.exports = router;

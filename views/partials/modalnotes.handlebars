@@ -6,7 +6,7 @@
         <div class="modal-body">
             <div class="panel-group">
                 {{#if notes}} {{#each notes}}
-                <div class="panel panel-default">
+                <div class="panel panel-default" id="panel-{{this.id}}">
                     <div class="panel-heading">
                             {{this.title}}
                             <button class="btn pull-right btn-danger btn-sm delete-note-btn" data-id="{{this.id}}">X</button>
