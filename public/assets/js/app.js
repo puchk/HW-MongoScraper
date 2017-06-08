@@ -27,8 +27,11 @@ $(document).ready(function() {
   });
 
   $(".addNotes").on("click", function(e) {
-    e.preventDefault();
-    
+    var path = '/notes/' + $(this).attr("data-id").toString();
+    $.get(path, function(res) {
+      $("#notesModal").html(res);
+      $("#notesModal").modal("show");
+    });
   });
-
+  
 });

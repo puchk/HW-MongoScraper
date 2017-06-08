@@ -1,0 +1,35 @@
+<div class="modal-dialog" role="document" id="masterModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Notes</h3>
+        </div>
+        <div class="modal-body">
+            <div class="panel-group">
+                {{#if notes}} {{#each notes}}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                            {{this.title}}
+                            <button class="btn pull-right btn-danger btn-sm delete-note-btn" data-id="{{this.id}}">X</button>
+                        </div>
+                    <div class="panel-body">{{this.body}}</div>
+                </div>
+                {{/each}} </div> {{else}}
+            <div class="container">
+                <h5 class="text-danger">No saved notes found in the database for this article...</h5>
+            </div>
+            {{/if}}
+        </div>
+        <div class="modal-footer">
+            <form>
+                <div class="form-group">
+                    <h4 class="text-left">Add new note </h4>
+                    <input type="text" class="form-control" id="noteTitle" placeholder="Enter title" required />
+                    <textarea class="form-control" id="noteBody" rows="3" placeholder="Add note here..." required></textarea>
+                </div>
+                <button type="button" class="btn btn-primary" data-articleId="{{articleId}}" id="addNewNote">Add</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="/assets/js/note.js"></script>

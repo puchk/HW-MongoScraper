@@ -29,11 +29,6 @@ $(document).ready(function() {
     });
   });
 
-  $(".addNotes").on("click", function(e) {
-    e.preventDefault();
-    //    alert($(this).attr("data-id"));
-  });
-
   $(".saveArticle").on("click", function(e) {
     var postData = {};
     postData.summary = $(this).attr("data-summary");

@@ -23,7 +23,7 @@
                 <h4>
                     <a target="_blank" href="/articles/{{this.id}}">{{this.title}}</a>
                     <button type="button" class="btn btn-danger deleteArticle" data-id={{this.id}} style="float:right;">Delete</button>                    
-                    <button type="button" class="btn btn-success addNotes" data-id={{this.id}} style="float:right;">Add notes</button>
+                    <button type="button" class="btn btn-success addNotes"  data-toggle="modal" data-target="#notesModal" data-id={{this.id}} style="float:right;">Notes</button>
                 </h4>
             </div>
             <div class="panel-body">
@@ -42,5 +42,8 @@
         </div>
         {{/if}}
     </div>
+</div>
+<div class="modal fade" role="dialog" tabindex="-1" id="notesModal">
+    
 </div>
 <script src="/assets/js/app.js"></script>
