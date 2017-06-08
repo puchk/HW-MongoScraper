@@ -21,9 +21,9 @@
         <div class="panel panel-default articles" id={{this.id}}>
             <div class="panel-heading">
                 <h4>
-                    <a target="_blank" href="/articles/{{this.id}}">{{this.title}}</a>
+                    <a target="_blank" href="{{this.link}}">{{this.title}}</a>
                     <button type="button" class="btn btn-danger deleteArticle" data-id={{this.id}} style="float:right;">Delete</button>                    
-                    <button type="button" class="btn btn-success addNotes"  data-toggle="modal" data-target="#notesModal" data-id={{this.id}} style="float:right;">Notes</button>
+                    <button type="button" class="btn btn-success addNotes"  data-toggle="modal" data-target="#notesModal" data-id={{this.id}} style="float:right; margin: auto 5px;">Notes</button>
                 </h4>
             </div>
             <div class="panel-body">
@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-xs-8 col-sm-9 col-md-9 col-lg-10">
                     <h5>{{this.summary}}</h5>
-                    <a target="_blank" href="/articles/{{this.id}}">Link of original aritcle</a>
+                    <a target="_blank" href="{{this.link}}">Link of original aritcle</a>
                 </div>
             </div>
         </div>
