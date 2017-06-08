@@ -34,7 +34,8 @@ var databaseUrl = "news_scraper";
 var collections = ["articles"];
 
 // db configuration with mongoose 
-mongoose.connect("mongodb://localhost/mongoscraper");
+//mongoose.connect("mongodb://localhost/mongoscraper");
+mongoose.connect("mongodb://heroku_7m76zs3f:gfcpseslmfkdck2aokv1hcsu17@ds117592.mlab.com:17592/heroku_7m76zs3f");
 var db = mongoose.connection;
 
 db.on("error", function(err) {
